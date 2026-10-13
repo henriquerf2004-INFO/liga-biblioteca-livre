@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Print Â· Biblioteca Livre</title>
+<link rel="stylesheet" href="./prints.css">
+<style>.tb{background:#78350f}.btn.main{background:#78350f}</style>
+</head>
+<body>
+<div class="topo"><h1>Biblioteca Livre</h1><span>Olhe as telas. Monte parecido.</span></div>
+<div class="grid">
+  <div class="bloco">
+    <h2>1 Â· Estante</h2>
+    <div class="fone">
+      <div class="tb"><span>Biblioteca Livre</span><span style="font-weight:600;font-size:0.8rem;">sair</span></div>
+      <div class="pad">
+        <div class="item"><div><strong>Clean Code (resumo)</strong><div><span class="badge ok">disponÃ­vel</span></div></div><button class="btn main" style="width:auto;padding:6px 10px;margin:0;font-size:0.75rem;">Emprestar</button></div>
+        <div class="item"><div><strong>Dom Casmurro</strong><div><span class="badge ok">disponÃ­vel</span></div></div><button class="btn main" style="width:auto;padding:6px 10px;margin:0;font-size:0.75rem;">Emprestar</button></div>
+        <div class="item"><div><strong>O Guia do Mochileiro</strong><div><span class="badge bad">emprestado</span></div></div><button class="btn ghost" style="width:auto;padding:6px 10px;margin:0;font-size:0.75rem;">â€”</button></div>
+        <div class="item"><div><strong>Use a CabeÃ§a Java</strong><div><span class="badge ok">disponÃ­vel</span></div></div><button class="btn main" style="width:auto;padding:6px 10px;margin:0;font-size:0.75rem;">Emprestar</button></div>
+        <div class="item"><div><strong>Comic da turma</strong><div><span class="badge bad">indisponÃ­vel</span></div></div><button class="btn ghost" style="width:auto;padding:6px 10px;margin:0;font-size:0.75rem;">â€”</button></div>
+      </div>
+    </div>
+  </div>
+  <div class="bloco">
+    <h2>2 Â· Depois de emprestar</h2>
+    <div class="fone">
+      <div class="tb"><span>Biblioteca Livre</span><span style="font-weight:600;font-size:0.8rem;">sair</span></div>
+      <div class="pad">
+        <div class="aviso info">EmprÃ©stimo registrado</div>
+        <div class="item"><div><strong>Clean Code (resumo)</strong><div><span class="badge bad">emprestado</span></div></div><button class="btn ghost" style="width:auto;padding:6px 10px;margin:0;font-size:0.75rem;">â€”</button></div>
+        <p class="muted" style="margin-top:12px;">Grava no Firestore ao emprestar.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+
