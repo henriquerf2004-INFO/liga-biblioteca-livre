@@ -1,20 +1,31 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<div style="background: #e2e8f0; min-height: 100vh; padding: 16px; font-family: sans-serif;">
+  <div class="topo">
+    <h1>Biblioteca Livre</h1>
+    <span>Olhe as telas. Monte parecido.</span>
   </div>
-</ion-content>
+
+  <div class="grid">
+    <div class="bloco">
+      <h2>1 · Estante</h2>
+      <div class="fone">
+        <div class="tb" style="background:#78350f; color: white; padding: 10px; display: flex; justify-content: space-between; align-items: center;">
+          <span>Biblioteca Livre</span>
+          <span style="font-weight:600;font-size:0.8rem;cursor:pointer;" (click)="sair()">sair</span>
+        </div>
+        <div class="pad" style="padding: 12px;">
+          <!-- Aviso de empréstimo -->
+          <div class="aviso info" *ngIf="mensagem" style="margin-bottom: 10px; padding: 8px; background: #dbeafe; color: #1e40af; border-radius: 4px;">
+            {{ mensagem }}
+          </div>
+
+          <!-- Componente Filho repetido com *ngFor -->
+          <app-livro-card 
+            *ngFor="let l of livros" 
+            [livro]="l" 
+            (emprestar)="emprestarLivro($event)">
+          </app-livro-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="item">
+  <div>
+    <strong>{{ livro.titulo }}</strong>
+    <div>
+      <span class="badge" [ngClass]="livro.status === 'disponível' ? 'ok' : 'bad'">
+        {{ livro.status }}
+      </span>
+    </div>
+  </div>
+  <button 
+    class="btn" 
+    [ngClass]="livro.status === 'disponível' ? 'main' : 'ghost'"
+    style="width:auto;padding:6px 10px;margin:0;font-size:0.75rem;"
+    [disabled]="livro.status !== 'disponível'"
+    (click)="onEmprestar()">
+    {{ livro.status === 'disponível' ? 'Empréstimo' : '—' }}
+  </button>
+</div>
