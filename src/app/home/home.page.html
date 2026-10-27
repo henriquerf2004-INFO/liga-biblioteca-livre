@@ -1,31 +1,30 @@
-<div style="background: #e2e8f0; min-height: 100vh; padding: 16px; font-family: sans-serif;">
-  <div class="topo">
-    <h1>Biblioteca Livre</h1>
-    <span>Olhe as telas. Monte parecido.</span>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Biblioteca Livre</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="sair()" color="light">Sair</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  
+  <!-- Melhoria Extra: Card com Contador de Livros -->
+  <div class="header-card">
+    <h2>Painel de Gestão</h2>
+    <p>Livros disponíveis para empréstimo: <strong>{{ obterTotalDisponiveis() }}</strong></p>
   </div>
 
-  <div class="grid">
-    <div class="bloco">
-      <h2>1 · Estante</h2>
-      <div class="fone">
-        <div class="tb" style="background:#78350f; color: white; padding: 10px; display: flex; justify-content: space-between; align-items: center;">
-          <span>Biblioteca Livre</span>
-          <span style="font-weight:600;font-size:0.8rem;cursor:pointer;" (click)="sair()">sair</span>
-        </div>
-        <div class="pad" style="padding: 12px;">
-          <!-- Aviso de empréstimo -->
-          <div class="aviso info" *ngIf="mensagem" style="margin-bottom: 10px; padding: 8px; background: #dbeafe; color: #1e40af; border-radius: 4px;">
-            {{ mensagem }}
-          </div>
+  <ion-text color="success" *ngIf="mensagem">
+    <p class="ion-padding-start"><strong>{{ mensagem }}</strong></p>
+  </ion-text>
 
-          <!-- Componente Filho repetido com *ngFor -->
-          <app-livro-card 
-            *ngFor="let l of livros" 
-            [livro]="l" 
-            (emprestar)="emprestarLivro($event)">
-          </app-livro-card>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+  <ion-list>
+    <app-livro-card 
+      *ngFor="let livro of livros" 
+      [livro]="livro" 
+      (emprestarEvent)="emprestarLivro(livro)">
+    </app-livro-card>
+  </ion-list>
+
+</ion-content>
